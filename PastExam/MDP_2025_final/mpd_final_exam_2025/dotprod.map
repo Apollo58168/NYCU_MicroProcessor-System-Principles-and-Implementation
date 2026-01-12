@@ -1,0 +1,462 @@
+Archive member included to satisfy reference by file (symbol)
+
+./libelibc.a(crt0.o)          (crt0)
+./libelibc.a(stdio.o)         dotprod.o (printf)
+./libelibc.a(string.o)        dotprod.o (memcpy)
+./libelibc.a(uart.o)          ./libelibc.a(stdio.o) (inbyte)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+                              ./libelibc.a(stdio.o) (__udivdi3)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+                              ./libelibc.a(stdio.o) (__adddf3)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+                              ./libelibc.a(stdio.o) (__divdf3)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+                              ./libelibc.a(stdio.o) (__ltdf2)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+                              ./libelibc.a(stdio.o) (__muldf3)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+                              ./libelibc.a(stdio.o) (__subdf3)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+                              ./libelibc.a(stdio.o) (__fixdfsi)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+                              ./libelibc.a(stdio.o) (__fixunsdfsi)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+                              ./libelibc.a(stdio.o) (__floatsidf)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+                              ./libelibc.a(stdio.o) (__floatunsidf)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+                              /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o) (__clz_tab)
+/opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+                              /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o) (__clzsi2)
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+code_ram         0x00001000         0x00004000         xr!rw
+data_ram         0x00005000         0x00008000         rw!x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00001000                        __stack_size = 0x1000
+                0x00004000                        __heap_size = 0x4000
+
+.text           0x00001000     0x39d8
+ *(.text*)
+ .text          0x00001000        0x0 dotprod.o
+ .text.startup  0x00001000      0x160 dotprod.o
+                0x00001000                main
+ .text          0x00001160       0x30 ./libelibc.a(crt0.o)
+                0x00001160                crt0
+ .text          0x00001190     0x11dc ./libelibc.a(stdio.o)
+                0x00001190                getchar
+                0x000011a8                putchar
+                0x000011d4                fputs
+                0x0000126c                fgets
+                0x00001340                putd
+                0x000014c0                putx
+                0x00001648                putld
+                0x00001958                putf
+                0x00001c2c                printf
+                0x00001e94                snprintf
+                0x00002114                vsnprintf
+ .text          0x0000236c      0x2b4 ./libelibc.a(string.o)
+                0x0000236c                memcpy
+                0x00002390                memmove
+                0x000023ec                memset
+                0x0000240c                memcmp
+                0x0000244c                strlen
+                0x00002474                strcpy
+                0x0000249c                strncpy
+                0x00002500                strcat
+                0x00002544                strncat
+                0x000025a0                strcmp
+                0x000025dc                strncmp
+ .text          0x00002620       0x70 ./libelibc.a(uart.o)
+                0x00002620                inbyte
+                0x00002644                outbyte
+ .text          0x00002690      0x42c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+                0x00002690                __udivdi3
+ .text          0x00002abc      0x780 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+                0x00002abc                __adddf3
+ .text          0x0000323c      0x6bc /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+                0x0000323c                __divdf3
+ .text          0x000038f8       0xd0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+                0x000038f8                __ltdf2
+                0x000038f8                __ledf2
+ .text          0x000039c8      0x5f4 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+                0x000039c8                __muldf3
+ .text          0x00003fbc      0x790 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+                0x00003fbc                __subdf3
+ .text          0x0000474c       0x80 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+                0x0000474c                __fixdfsi
+ .text          0x000047cc       0x7c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+                0x000047cc                __fixunsdfsi
+ .text          0x00004848       0xb4 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+                0x00004848                __floatsidf
+ .text          0x000048fc       0x90 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+                0x000048fc                __floatunsidf
+ .text          0x0000498c        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .text          0x0000498c       0x4c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+                0x0000498c                __clzsi2
+
+.srodata.cst8   0x000049d8       0x10
+ .srodata.cst8  0x000049d8       0x10 ./libelibc.a(stdio.o)
+
+.eh_frame       0x000049e8       0x28
+ .eh_frame      0x000049e8       0x28 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+
+.rela.dyn       0x00004a10        0x0
+ .rela.sdata    0x00004a10        0x0 dotprod.o
+
+.data           0x00005000      0x3c0
+ *(.data)
+ .data          0x00005000        0x0 dotprod.o
+ .data          0x00005000        0x0 ./libelibc.a(crt0.o)
+ .data          0x00005000        0x0 ./libelibc.a(stdio.o)
+ .data          0x00005000        0x0 ./libelibc.a(string.o)
+ .data          0x00005000        0x0 ./libelibc.a(uart.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .data          0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+ *(.bss)
+ .bss           0x00005000        0x0 dotprod.o
+ .bss           0x00005000        0x0 ./libelibc.a(crt0.o)
+ .bss           0x00005000        0x0 ./libelibc.a(stdio.o)
+ .bss           0x00005000        0x0 ./libelibc.a(string.o)
+ .bss           0x00005000        0x0 ./libelibc.a(uart.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .bss           0x00005000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+ *(.rodata*)
+ .rodata.str1.4
+                0x00005000       0xf5 dotprod.o
+                                 0x75 (size before relaxing)
+ .rodata.str1.4
+                0x000050f5       0x7d ./libelibc.a(stdio.o)
+ *fill*         0x000050f5        0x3 
+ .rodata        0x000050f8      0x18c ./libelibc.a(stdio.o)
+ .rodata        0x00005284       0x3c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .rodata        0x000052c0      0x100 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+                0x000052c0                __clz_tab
+
+.sdata          0x000053c0       0x40
+ .sdata         0x000053c0       0x20 dotprod.o
+                0x000053c0                b_init
+                0x000053c8                a_init
+                0x000053d0                trig
+                0x000053d4                c
+                0x000053d8                B
+                0x000053dc                A
+ .sdata         0x000053e0        0x4 ./libelibc.a(crt0.o)
+                0x000053e0                stack_top
+ .sdata         0x000053e4       0x1c ./libelibc.a(stdio.o)
+                0x000053e4                stderr
+                0x000053e8                stdout
+                0x000053ec                stdin
+
+.sbss           0x00005400        0xc
+ .sbss          0x00005400        0x4 ./libelibc.a(crt0.o)
+                0x00005400                sp_store
+ .sbss          0x00005404        0x8 ./libelibc.a(stdio.o)
+
+.heap           0x00005410     0x4000
+                0x00005410                        __heap_start = .
+                0x00009410                        . = (. + __heap_size)
+ *fill*         0x00005410     0x4000 
+
+.stack          0x00009410     0x1000
+                0x0000a410                        . = (. + __stack_size)
+ *fill*         0x00009410     0x1000 
+                0x0000a410                        __stack_top = .
+LOAD dotprod.o
+LOAD ./libelibc.a
+LOAD /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a
+OUTPUT(dotprod.elf elf32-littleriscv)
+
+.comment        0x00000000       0x19
+ .comment       0x00000000       0x19 dotprod.o
+                                 0x1a (size before relaxing)
+ .comment       0x00000019       0x1a ./libelibc.a(crt0.o)
+ .comment       0x00000019       0x1a ./libelibc.a(stdio.o)
+ .comment       0x00000019       0x1a ./libelibc.a(string.o)
+ .comment       0x00000019       0x1a ./libelibc.a(uart.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .comment       0x00000019       0x1a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 dotprod.o
+ .note.GNU-stack
+                0x00000000        0x0 ./libelibc.a(crt0.o)
+ .note.GNU-stack
+                0x00000000        0x0 ./libelibc.a(stdio.o)
+ .note.GNU-stack
+                0x00000000        0x0 ./libelibc.a(string.o)
+ .note.GNU-stack
+                0x00000000        0x0 ./libelibc.a(uart.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .note.GNU-stack
+                0x00000000        0x0 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.riscv.attributes
+                0x00000000       0x57
+ .riscv.attributes
+                0x00000000       0x57 dotprod.o
+ .riscv.attributes
+                0x00000057       0x57 ./libelibc.a(crt0.o)
+ .riscv.attributes
+                0x000000ae       0x57 ./libelibc.a(stdio.o)
+ .riscv.attributes
+                0x00000105       0x57 ./libelibc.a(string.o)
+ .riscv.attributes
+                0x0000015c       0x57 ./libelibc.a(uart.o)
+ .riscv.attributes
+                0x000001b3       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .riscv.attributes
+                0x000001f5       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .riscv.attributes
+                0x00000237       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .riscv.attributes
+                0x00000279       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .riscv.attributes
+                0x000002bb       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .riscv.attributes
+                0x000002fd       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .riscv.attributes
+                0x0000033f       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .riscv.attributes
+                0x00000381       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .riscv.attributes
+                0x000003c3       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .riscv.attributes
+                0x00000405       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .riscv.attributes
+                0x00000447       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .riscv.attributes
+                0x00000489       0x42 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_info     0x00000000     0x2b21
+ .debug_info    0x00000000      0x776 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .debug_info    0x00000776      0x4f6 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_info    0x00000c6c      0x683 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_info    0x000012ef      0x220 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_info    0x0000150f      0x6ac /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_info    0x00001bbb      0x4f2 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_info    0x000020ad      0x1c2 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_info    0x0000226f      0x1a9 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_info    0x00002418      0x268 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_info    0x00002680      0x25d /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_info    0x000028dd       0xed /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .debug_info    0x000029ca      0x157 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_abbrev   0x00000000      0xfdd
+ .debug_abbrev  0x00000000      0x1a6 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x000001a6      0x186 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_abbrev  0x0000032c      0x17c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_abbrev  0x000004a8      0x168 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_abbrev  0x00000610      0x185 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_abbrev  0x00000795      0x186 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_abbrev  0x0000091b      0x15f /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_abbrev  0x00000a7a      0x162 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_abbrev  0x00000bdc      0x164 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_abbrev  0x00000d40      0x163 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_abbrev  0x00000ea3       0x70 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .debug_abbrev  0x00000f13       0xca /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_loclists
+                0x00000000     0x31f5
+ .debug_loclists
+                0x00000000      0x6b2 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .debug_loclists
+                0x000006b2      0xa8e /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_loclists
+                0x00001140      0xa17 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_loclists
+                0x00001b57      0x117 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_loclists
+                0x00001c6e      0x7bb /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_loclists
+                0x00002429      0xafd /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_loclists
+                0x00002f26       0xac /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_loclists
+                0x00002fd2       0x72 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_loclists
+                0x00003044       0xa9 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_loclists
+                0x000030ed       0xc4 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_loclists
+                0x000031b1       0x44 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_aranges  0x00000000      0x178
+ .debug_aranges
+                0x00000000       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x00000020       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_aranges
+                0x00000040       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_aranges
+                0x00000060       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_aranges
+                0x00000080       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_aranges
+                0x000000a0       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_aranges
+                0x000000c0       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_aranges
+                0x000000e0       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_aranges
+                0x00000100       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_aranges
+                0x00000120       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_aranges
+                0x00000140       0x18 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .debug_aranges
+                0x00000158       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_rnglists
+                0x00000000      0x559
+ .debug_rnglists
+                0x00000000       0x8f /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .debug_rnglists
+                0x0000008f       0xf2 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_rnglists
+                0x00000181       0xce /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_rnglists
+                0x0000024f       0x33 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_rnglists
+                0x00000282      0x149 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_rnglists
+                0x000003cb       0xf2 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_rnglists
+                0x000004bd       0x13 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_rnglists
+                0x000004d0       0x16 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_rnglists
+                0x000004e6       0x30 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_rnglists
+                0x00000516       0x2d /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_rnglists
+                0x00000543       0x16 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_line     0x00000000     0x5cc9
+ .debug_line    0x00000000      0x97b /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+ .debug_line    0x0000097b     0x1377 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_line    0x00001cf2     0x110e /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_line    0x00002e00      0x347 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_line    0x00003147      0xf02 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_line    0x00004049     0x1384 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_line    0x000053cd      0x1df /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_line    0x000055ac      0x1bb /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_line    0x00005767      0x225 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_line    0x0000598c      0x223 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_line    0x00005baf       0x3f /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .debug_line    0x00005bee       0xdb /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_str      0x00000000      0x78a
+ .debug_str     0x00000000      0x78a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+                                0x26e (size before relaxing)
+ .debug_str     0x0000078a      0x2a8 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_str     0x0000078a      0x36a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_str     0x0000078a      0x1de /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_str     0x0000078a      0x3c2 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_str     0x0000078a      0x2a8 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_str     0x0000078a      0x1b5 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_str     0x0000078a      0x1b1 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_str     0x0000078a      0x252 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_str     0x0000078a      0x24d /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_str     0x0000078a      0x1bb /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .debug_str     0x0000078a      0x1d8 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_line_str
+                0x00000000      0x247
+ .debug_line_str
+                0x00000000      0x247 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_udivdi3.o)
+                                0x10a (size before relaxing)
+ .debug_line_str
+                0x00000247      0x116 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_line_str
+                0x00000247      0x120 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_line_str
+                0x00000247      0x123 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_line_str
+                0x00000247      0x120 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_line_str
+                0x00000247      0x116 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_line_str
+                0x00000247      0x123 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_line_str
+                0x00000247      0x12c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_line_str
+                0x00000247      0x129 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_line_str
+                0x00000247      0x12f /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_line_str
+                0x00000247      0x10a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clz.o)
+ .debug_line_str
+                0x00000247      0x10a /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)
+
+.debug_frame    0x00000000      0x24c
+ .debug_frame   0x00000000       0x4c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(adddf3.o)
+ .debug_frame   0x0000004c       0x5c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(divdf3.o)
+ .debug_frame   0x000000a8       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(ledf2.o)
+ .debug_frame   0x000000c8       0x5c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(muldf3.o)
+ .debug_frame   0x00000124       0x4c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(subdf3.o)
+ .debug_frame   0x00000170       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixdfsi.o)
+ .debug_frame   0x00000190       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(fixunsdfsi.o)
+ .debug_frame   0x000001b0       0x40 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatsidf.o)
+ .debug_frame   0x000001f0       0x3c /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(floatunsidf.o)
+ .debug_frame   0x0000022c       0x20 /opt/riscv/lib/gcc/riscv32-unknown-elf/14.2.0/libgcc.a(_clzsi2.o)

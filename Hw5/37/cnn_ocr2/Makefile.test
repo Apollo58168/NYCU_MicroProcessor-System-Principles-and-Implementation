@@ -1,0 +1,62 @@
+# ======================================================================
+#  Makefile for test_dsa - 簡化版 DSA 測試程式
+#  Dec/25/2024
+# ======================================================================
+
+# ======================================================================
+# Without FPU (用於 DSA 加速器整合)
+RISCV_ABI = -march=rv32ima_zicsr_zifencei -mabi=ilp32
+GCC_LIB = rv32im/ilp32
+# With FPU (如果你的 toolchain 支援)
+# RISCV_ABI = -march=rv32imafc_zicsr_zifencei -mabi=ilp32f
+# GCC_LIB = rv32imafc/ilp32f
+# ======================================================================
+
+CROSS = riscv32-unknown-elf
+CCPATH = $(RISCV)/bin
+
+CC = $(CCPATH)/$(CROSS)-gcc
+LD = $(CCPATH)/$(CROSS)-ld
+AR = $(CCPATH)/$(CROSS)-ar
+OD = $(CCPATH)/$(CROSS)-objdump
+SP = $(CCPATH)/$(CROSS)-strip
+
+GCCVERSION = $(shell $(CC) --version | grep gcc | sed 's/^.* //g')
+
+LIBC = ../elibc
+LIBC_OBJS = $(LIBC)/crt0.o $(LIBC)/stdio.o $(LIBC)/stdlib.o $(LIBC)/string.o $(LIBC)/time.o $(LIBC)/uart.o
+
+# 如果需要啟用 Buffered 模式測試，加上 -DUSE_CONV3D_BUFFERED
+# DSA_FLAGS = -DUSE_DSA_ACCELERATOR -DUSE_CONV3D_BUFFERED
+DSA_FLAGS = 
+
+CCFLAGS = -Wall -O2 -I$(LIBC) -fno-builtin -mstrict-align $(RISCV_ABI) $(DSA_FLAGS)
+LDFLAGS = -L. -Map=$*.map
+LD_GCC_LIB = -L$(RISCV)/lib/gcc/riscv32-unknown-elf/$(GCCVERSION)/$(GCC_LIB) -lgcc
+
+PROJ = test_dsa
+OBJS = $(PROJ).o
+
+all: $(PROJ).elf
+
+clean:
+	rm -f *.elf *.objdump *.map *.o *.a
+	rm -f $(LIBC)/*.o
+
+%.o: %.c
+	$(CC) $(CCFLAGS) -c $< -o $@
+
+$(LIBC)/%.o: $(LIBC)/%.c
+	$(CC) $(CCFLAGS) -c $< -o $@
+
+libelibc.a: $(LIBC_OBJS)
+	$(AR) r libelibc.a $(LIBC_OBJS)
+	rm -f $(LIBC_OBJS)
+
+$(PROJ).elf: $(OBJS) libelibc.a
+	$(LD) $(LDFLAGS) -T$(PROJ).ld $(OBJS) -lelibc $(LD_GCC_LIB) -o $@
+	$(OD) -d $@ > $*.objdump
+	$(SP) -g $@
+	rm -f $(OBJS)
+
+.PHONY: all clean
