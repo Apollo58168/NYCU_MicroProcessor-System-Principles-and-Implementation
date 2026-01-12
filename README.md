@@ -4,6 +4,16 @@
 
 ---
 
+## Development Environment
+
+- **Hardware Platform:** Digilent Arty A7-100T (Xilinx Artix-7 FPGA)
+- **Processor Architecture:** Aquila RISC-V Core (RV32IMA)
+- **EDA Tools:** Xilinx Vivado 2024.1, Vitis Unified Software Platform
+- **Toolchain:** riscv32-unknown-elf-gcc (GCC 15.1.0)
+- **OS Environment:** FreeRTOS v10.4.6 (for HW4)
+
+---
+
 ## Homework
 
 - **hw0: Simulation of a HW-SW Platform**
