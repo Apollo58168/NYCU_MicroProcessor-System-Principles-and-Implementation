@@ -32,8 +32,8 @@
 
 ---
 
-# Final Online Test
+## Final Online Test
 
-Topic: Inner Product IP Integration
+**Topic: Inner Product IP Integration**
 
 Designed and integrated a hardware IP for 1x8 signed integer vector inner product calculations via MMIO interface.
